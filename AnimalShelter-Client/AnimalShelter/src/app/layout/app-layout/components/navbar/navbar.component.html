@@ -1,0 +1,289 @@
+<nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+  <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+    <a class="navbar-brand brand-logo" href="index.html">
+      <img src="assets/images/logo.svg" alt="logo" />
+    </a>
+    <a class="navbar-brand brand-logo-mini" href="index.html">
+      <img src="assets/images/logo-mini.svg" alt="logo" />
+    </a>
+  </div>
+  <div class="navbar-menu-wrapper d-flex align-items-center">
+    <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+      <li class="nav-item dropdown d-none d-xl-inline-block" ngbDropdown>
+        <a class="nav-link dropdown-toggle cursor-pointer" id="ColeteDropdown" ngbDropdownToggle>Colete</a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" ngbDropdownMenu aria-labelledby="ColeteDropdown">
+          <a class="dropdown-item mt-2" href="#" [routerLink]="['/colete']">
+            Colete
+          </a>
+          <a class="dropdown-item" href="#">
+           Import
+          </a>
+          <a class="dropdown-item" [routerLink]="['/ridicari']" routerLinkActive="router-link-active">
+            Ridicari
+          </a>
+          <a class="dropdown-item" href="#">
+            Dashboard
+          </a>
+          <a class="dropdown-item" href="#">
+            Rapoarte
+          </a>
+          <a class="dropdown-item" href="#">
+            Decont curieri
+          </a>
+          <a class="dropdown-item" href="#">
+            Decont clienti
+          </a>
+          <a class="dropdown-item" href="#">
+            Transferuri
+          </a>
+          <a class="dropdown-item" [routerLink]="['/adrese']" routerLinkActive="router-link-active">
+            Adrese
+          </a>
+          <a class="dropdown-item" href="#">
+            Alte colete
+          </a>
+          <a class="dropdown-item" href="#">
+            Scanari
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown d-none d-xl-inline-block" ngbDropdown>
+        <a class="nav-link dropdown-toggle cursor-pointer" id="FirmaDropdown" ngbDropdownToggle>Firma</a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" ngbDropdownMenu aria-labelledby="FirmaDropdown">
+          <a class="dropdown-item mt-2" href="#" [routerLink]="['/clienti']">
+            Clienti
+          </a>
+          <a class="dropdown-item" [routerLink]="['/useri']" routerLinkActive="router-link-active" >
+            Utilizatori
+          </a>
+          <a class="dropdown-item" href="#">
+            Notificari
+          </a>
+          <a class="dropdown-item" [routerLink]="['/facturi']" routerLinkActive="router-link-active">
+            Facturi
+          </a>
+          <a class="dropdown-item" href="#">
+            Incasari
+          </a>
+          <a class="dropdown-item" href="#">
+            Cheltuieli
+          </a>
+          <a class="dropdown-item" href="#">
+            Masini
+          </a>
+          <a class="dropdown-item" [routerLink]="['/angajati']" routerLinkActive="router-link-active">
+            Angajati
+          </a>
+          <a class="dropdown-item" href="#">
+            Firme proprii
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown d-none d-xl-inline-block" ngbDropdown>
+        <a class="nav-link dropdown-toggle cursor-pointer" id="RutareDropdown" ngbDropdownToggle>Rutare</a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" ngbDropdownMenu aria-labelledby="RutareDropdown">
+          <a class="dropdown-item mt-2" [routerLink]="['/zone']" routerLinkActive="router-link-active">
+            Zone
+          </a>
+          <a class="dropdown-item" [routerLink]="['/orase']" routerLinkActive="router-link-active">
+            Orase
+          </a>
+          <a class="dropdown-item" [routerLink]="['/franchisori']" routerLinkActive="router-link-active" >
+            Franchisori
+          </a>
+          <a class="dropdown-item" [routerLink]="['/huburi']" routerLinkActive="router-link-active" >
+            Huburi
+          </a>
+          <a class="dropdown-item" href="#">
+            Rute
+          </a>
+          <a class="dropdown-item" href="#">
+            Curse
+          </a>
+          <a class="dropdown-item" href="#">
+            Curse programate
+          </a>
+          <a class="dropdown-item" href="#">
+            Actiuni barcod
+          </a>
+          <a class="dropdown-item" href="#">
+            Porti
+          </a>
+          <a class="dropdown-item" href="#">
+            Harta
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown d-none d-xl-inline-block" ngbDropdown>
+        <a class="nav-link dropdown-toggle cursor-pointer" id="SetariDropdown" ngbDropdownToggle>Setari</a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" ngbDropdownMenu aria-labelledby="SetariDropdown">
+          <a class="dropdown-item" [routerLink]="['/setarimenu']" routerLinkActive="router-link-active" >
+            Setari
+          </a>
+          <a class="dropdown-item" [routerLink]="['/altesetari']" routerLinkActive="router-link-active" >
+            Alte setari
+          </a>
+          <a class="dropdown-item" [routerLink]="['/drepturi']" routerLinkActive="router-link-active" >
+            Drepturi
+          </a>
+          <a class="dropdown-item" [routerLink]="['/servicii']" routerLinkActive="router-link-active" >
+            Servicii
+          </a>
+          <a class="dropdown-item" [routerLink]="['/serii']" routerLinkActive="router-link-active" >
+            Serii
+          </a>
+          <a class="dropdown-item" [routerLink]="['/coduri']" routerLinkActive="router-link-active">
+            Coduri
+          </a>
+          <a class="dropdown-item" href="#">
+            Templaturi
+          </a>
+          <a class="dropdown-item" href="#">
+            SMS Log
+          </a>
+          <a class="dropdown-item" href="#">
+            Logs
+          </a>
+          <a class="dropdown-item" href="#">
+            Loguri mobile
+          </a>
+          <a class="dropdown-item" href="#">
+            Erori aplicatie mobila
+          </a>
+          <a class="dropdown-item" href="#">
+            Task-uri
+          </a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-nav-right">
+      <!-- <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" ngbDropdownToggle>
+          <i class="mdi mdi-file-document-box"></i>
+          <span class="count">7</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" ngbDropdownMenu aria-labelledby="messageDropdown">
+          <div class="dropdown-item">
+            <p class="mb-0 font-weight-normal float-left">You have 7 unread mails
+            </p>
+            <span class="badge badge-info badge-pill float-right">View all</span>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <img src="assets/images/faces/face4.jpg" alt="image" class="profile-pic">
+            </div>
+            <div class="preview-item-content flex-grow">
+              <h6 class="preview-subject ellipsis font-weight-medium">David Grey
+                <span class="float-right font-weight-light small-text">1 Minutes ago</span>
+              </h6>
+              <p class="font-weight-light small-text">
+                The meeting is cancelled
+              </p>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <img src="assets/images/faces/face2.jpg" alt="image" class="profile-pic">
+            </div>
+            <div class="preview-item-content flex-grow">
+              <h6 class="preview-subject ellipsis font-weight-medium">Tim Cook
+                <span class="float-right font-weight-light small-text">15 Minutes ago</span>
+              </h6>
+              <p class="font-weight-light small-text">
+                New product launch
+              </p>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <img src="assets/images/faces/face3.jpg" alt="image" class="profile-pic">
+            </div>
+            <div class="preview-item-content flex-grow">
+              <h6 class="preview-subject ellipsis font-weight-medium"> Johnson
+                <span class="float-right font-weight-light small-text">18 Minutes ago</span>
+              </h6>
+              <p class="font-weight-light small-text">
+                Upcoming board meeting
+              </p>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" ngbDropdownToggle>
+          <i class="mdi mdi mdi-bell"></i>
+          <span class="count">4</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" ngbDropdownMenu aria-labelledby="notificationDropdown">
+          <a class="dropdown-item">
+            <p class="mb-0 font-weight-normal float-left">You have 4 new notifications
+            </p>
+            <span class="badge badge-pill badge-warning float-right">View all</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-success">
+                <i class="mdi mdi-alert-circle-outline mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-medium">Application Error</h6>
+              <p class="font-weight-light small-text">
+                Just now
+              </p>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-warning">
+                <i class="mdi mdi-tune-vertical mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-medium">Settings</h6>
+              <p class="font-weight-light small-text">
+                Private message
+              </p>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-info">
+                <i class="mdi mdi-email-outline mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-medium">New user registration</h6>
+              <p class="font-weight-light small-text">
+                2 days ago
+              </p>
+            </div>
+          </a>
+        </div>
+      </li> -->
+      <li class="nav-item dropdown d-none d-xl-inline-block" ngbDropdown>
+        <a class="nav-link dropdown-toggle cursor-pointer" id="UserDropdown" ngbDropdownToggle>
+          <span class="profile-text">Salut {{loggedInUser.username}} !</span>
+          <!-- <img class="img-xs rounded-circle" src="assets/images/faces/face1.jpg" alt="Profile image"> -->
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" ngbDropdownMenu aria-labelledby="UserDropdown">
+          <a class="dropdown-item mt-2" [routerLink]="['/myaccount']" routerLinkActive="router-link-active" >
+            Contul meu
+          </a>
+          <a class="dropdown-item mt-2 cursor-pointer"  routerLinkActive="router-link-active" (click)="signOut()">
+            Sign Out
+          </a>
+        </div>
+      </li>
+    </ul>
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" (click)="toggleOffcanvas()">
+      <span class="mdi mdi-menu"></span>
+    </button>
+  </div>
+</nav>
