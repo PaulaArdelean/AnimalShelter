@@ -7,7 +7,7 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { CommandBus, QueryBus } from '@nestjs/cqrs';
+import { CommandBus, EventBus, QueryBus } from '@nestjs/cqrs';
 import { CreateAnimalCommand } from './commands/create-animal/create-animal.command';
 import { DeleteAnimalCommand } from './commands/delete-animal/delete-animal.command';
 import { CreateAnimalDto } from './dto/create-animal.dto';
@@ -19,10 +19,12 @@ export class AnimalsController {
   constructor(
     private readonly commandBus: CommandBus,
     private readonly queryBus: QueryBus,
+    private readonly eventBus: EventBus
   ) {}
 
   @Post()
-  create(@Body() createAnimalDto: CreateAnimalDto) {
+  create(@Body() createAnimalDto: CreateAnimalDto) {  
+    this.eventBus.publish(new CreateAnimalCommand(createAnimalDto));
     return this.commandBus.execute(new CreateAnimalCommand(createAnimalDto));
   }
 
@@ -39,6 +41,7 @@ export class AnimalsController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
+    this.eventBus.publish(new DeleteAnimalCommand(id));
     return this.commandBus.execute(new DeleteAnimalCommand(id));
   }
 }

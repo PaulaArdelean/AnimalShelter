@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AnimalService } from 'src/app/_services/animal.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Animal } from 'src/app/_models/animal';
 
 @Component({
   selector: 'app-add-edit-animal',
@@ -16,10 +17,10 @@ export class AddEditAnimalComponent implements OnInit {
   public animalForm = new FormGroup({
     type: new FormControl('', Validators.required),
     code: new FormControl('', Validators.required),
-    userId: new FormControl('', Validators.required)
   }, { validators: [] });
 
-  constructor(private router: Router, private route: ActivatedRoute, private animalService: AnimalService, public modalService: NgbModal) { }
+  constructor(private router: Router, private route: ActivatedRoute, private animalService: AnimalService, 
+              public modalService: NgbModal) { }
   ngOnInit(): void {
     const animalId = this.route.snapshot.params.id;
     this
@@ -36,30 +37,7 @@ export class AddEditAnimalComponent implements OnInit {
   }
 
   public submitAnimalForm(): void {
-    if (this.isEdit) {
-      this.editAnimal();
-    } else {
-      this.addAnimal();
-    }
-  }
-
-  private editAnimal(): void {
-    if (!this.animalForm.valid) {
-      alert('Completati campurile obligatorii.');
-    } else {
-      const animalPayload = this.animalForm.value as Animal;
-      animalPayload.id = this.animal.id;
-      this.animalService.updateAnimal(animalPayload, this.animal.id).subscribe((resp) => {
-        if (resp.id <= 0) {
-          alert('Ceva nu a functionat, incercati din nou.');
-        } else {
-          alert('Animal modified!');
-          this.router.navigate(['/animals']);
-        }
-      }, (error) => {
-        alert(`${error.error}`);
-      });
-    }
+    this.addAnimal();
   }
 
   private addAnimal(): void {
@@ -67,9 +45,8 @@ export class AddEditAnimalComponent implements OnInit {
       alert('Completati campurile obligatorii.');
     } else {
       this.animalService.addAnimal(this.animalForm.value as Animal).subscribe((resp) => {
-        if (resp.id <= 0) {
-          alert('Ceva nu a functionat, incercati din nou.');
-        }
+        console.log(resp);
+        this.router.navigate(['/']);
       }, (error) => {
         alert(`${error.error}`);
       });

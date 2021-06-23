@@ -2,6 +2,7 @@ import { OnInit, Component } from '@angular/core';
 import { Animal } from 'src/app/_models/animal';
 import { Router } from '@angular/router';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AnimalService } from '../../../../_services/animal.service';
 
 @Component({
   selector: 'app-animals-list',
@@ -9,7 +10,7 @@ import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AnimalsListComponent implements OnInit {
   public animals: Animal[] = [];
-  public animalIdToDelete: number;
+  public animalIdToDelete: string;
   private activeModal: NgbModalRef;
 
   constructor(private router: Router, private animalService: AnimalService, public modalService: NgbModal) { }
@@ -25,11 +26,12 @@ export class AnimalsListComponent implements OnInit {
   private getAnimals(): void {
     this.animalService.getAllAnimals().subscribe(animals => {
       this.animals = animals;
+      console.log('animals', this.animals);
     });
   }
 
   public stergeAnimal(): void {
-    if (this.animalIdToDelete > 0) {
+    if (this.animalIdToDelete) {
       this
         .animalService
         .deleteAnimal(this.animalIdToDelete)
@@ -41,7 +43,7 @@ export class AnimalsListComponent implements OnInit {
     }
   }
 
-  public openAnimalDeleteModal(content: any, animalId: number): void {
+  public openAnimalDeleteModal(content: any, animalId: string): void {
     this.animalIdToDelete = animalId;
     this.activeModal = this
       .modalService

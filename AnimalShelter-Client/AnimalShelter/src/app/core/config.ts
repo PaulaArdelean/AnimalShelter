@@ -1,6 +1,6 @@
 export let CONFIG = {
   baseUrls: {
     // localhost
-    apiUrl: 'https://localhost:3000'
+    apiUrl: 'http://localhost:3000'
   }
 };
