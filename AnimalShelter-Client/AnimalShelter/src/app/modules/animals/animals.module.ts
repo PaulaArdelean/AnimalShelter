@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
-import { UserService } from 'src/app/_services/user.service';
-import { UsersRoutingModule } from './users-routing.module';
+import { AnimalsRoutingModule } from './animals-routing.module';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from 'src/app/core/core.module';
-import { AddEditUserComponent } from './components/add-edit/add-edit-user.component';
 import { NgbModule, NgbDropdownModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { UserComponent } from './components/single/user.component';
-import { UsersListComponent } from './components/list/users-list.component';
 
 @NgModule({
   imports: [
@@ -17,18 +13,17 @@ import { UsersListComponent } from './components/list/users-list.component';
     FormsModule,
     ReactiveFormsModule,
     CoreModule,
-    UsersRoutingModule,
+    AnimalsRoutingModule,
     NgbModule,
     NgbDropdownModule
   ],
   declarations: [
-    UsersListComponent,
-    AddEditUserComponent,
-    UserComponent
+    AnimalsListComponent,
+    AddEditAnimalComponent,
   ],
   providers: [
     NgbActiveModal,
-    UserService
+    AnimalService
   ]
 })
-export class UsersModule { }
+export class AnimalsModule { }

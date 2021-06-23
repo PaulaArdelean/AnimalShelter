@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-useri-list',
-  templateUrl: './useri-list.component.html'
+  selector: 'app-users-list',
+  templateUrl: './users-list.component.html'
 })
 export class UsersListComponent implements OnInit {
   public users: User[] = [];
@@ -16,14 +16,14 @@ export class UsersListComponent implements OnInit {
   constructor(private router: Router, private userService: UserService, public modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.getUseri();
+    this.getUsers();
     if (!this.users) {
       alert('A aparut o eroare!');
       this.router.navigate(['/']);
     }
   }
 
-  private getUseri(): void {
+  private getUsers(): void {
     this.userService.getAllUsers().subscribe(users => {
       this.users = users;
     });
@@ -36,7 +36,7 @@ export class UsersListComponent implements OnInit {
         .deleteUser(this.userIdToDelete)
         .subscribe(resp => {
           console.log('deleted user: ', resp);
-          this.getUseri();
+          this.getUsers();
           this.activeModal.close();
         });
     }
