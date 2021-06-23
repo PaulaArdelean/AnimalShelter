@@ -36,10 +36,6 @@ export class AnimalsController {
     return this.queryBus.execute(new GetAnimalQuery(id));
   }
 
-  // @Put(':id')
-  // update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-  //   return this.commandBus.execute(new UpdateUserCommand(id, updateUserDto));
-  // }
 
   @Delete(':id')
   remove(@Param('id') id: string) {

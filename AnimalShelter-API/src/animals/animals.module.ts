@@ -8,9 +8,15 @@ import { QueryHandlers } from './queries';
 import { AnimalsController } from './animals.controller';
 import { AnimalRepository } from './repository/animal-repository';
 import { AnimalRepositoryMemoryAdapter } from './repository/memory/animal-repository-memory.adapter';
+import { EventStoreModule } from 'src/shared/event-store/event-store.module';
+import { EventHandlers } from './events/handlers';
+import { AnimalsService } from './services/users.service';
 
 @Module({
-  imports: [CqrsModule],
+  imports: [
+    CqrsModule,
+    EventStoreModule.forFeature()
+  ],
   controllers: [AnimalsController],
   providers: [
     {
@@ -23,6 +29,8 @@ import { AnimalRepositoryMemoryAdapter } from './repository/memory/animal-reposi
     },
     ...CommandHandlers,
     ...QueryHandlers,
+    ...EventHandlers,
+    AnimalsService
   ],
 })
 export class AnimalsModule {}

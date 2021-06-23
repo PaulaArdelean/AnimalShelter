@@ -49,16 +49,16 @@ export class AddEditUserComponent implements OnInit {
     } else {
       const userPayload = this.userForm.value as User;
       userPayload.id = this.user.id;
-      this.userService.updateUser(userPayload, this.user.id).subscribe((resp) => {
-        if (resp.id <= 0) {
-          alert('Ceva nu a functionat, incercati din nou.');
-        } else {
-          alert('Utilizator modificat cu succes!');
-          this.router.navigate(['/users']);
-        }
-      }, (error) => {
-        alert(`${error.error}`);
-      });
+    //   this.userService.updateUser(userPayload, this.user.id).subscribe((resp) => {
+    //     if (resp.id <= 0) {
+    //       alert('Ceva nu a functionat, incercati din nou.');
+    //     } else {
+    //       alert('Utilizator modificat cu succes!');
+    //       this.router.navigate(['/users']);
+    //     }
+    //   }, (error) => {
+    //     alert(`${error.error}`);
+    //   });
     }
   }
 

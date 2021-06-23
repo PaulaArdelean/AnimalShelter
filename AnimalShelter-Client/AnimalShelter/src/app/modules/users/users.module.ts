@@ -7,8 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from 'src/app/core/core.module';
 import { AddEditUserComponent } from './components/add-edit/add-edit-user.component';
 import { NgbModule, NgbDropdownModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { UserComponent } from './components/single/user.component';
 import { UsersListComponent } from './components/list/users-list.component';
+import { UserComponent } from './components/view/user.component';
 
 @NgModule({
   imports: [
