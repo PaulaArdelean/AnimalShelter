@@ -10,7 +10,7 @@ import { AnimalRepository } from './repository/animal-repository';
 import { AnimalRepositoryMemoryAdapter } from './repository/memory/animal-repository-memory.adapter';
 import { EventStoreModule } from 'src/shared/event-store/event-store.module';
 import { EventHandlers } from './events/handlers';
-import { AnimalsService } from './services/users.service';
+import { AnimalsService } from './services/animals.service';
 
 @Module({
   imports: [

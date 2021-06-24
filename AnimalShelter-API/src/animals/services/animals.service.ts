@@ -7,7 +7,9 @@ import { CreateAnimalDto } from '../dto/create-animal.dto';
 
 @Injectable()
 export class AnimalsService {
-  constructor(private readonly commandBus: CommandBus) {}
+  constructor(
+    private readonly commandBus: CommandBus,
+    ) {}
 
   async createAnimal(animal: CreateAnimalDto) {
     return await this.commandBus.execute(
@@ -15,9 +17,9 @@ export class AnimalsService {
     );
   }
 
-  async deleteAnimal(Animal: string) {
+  async deleteAnimal(id: string) {
     return await this.commandBus.execute(
-      new DeleteAnimalCommand(Animal),
+      new DeleteAnimalCommand(id),
     );
   }
 
